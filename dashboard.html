@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Painel de Controle | Área do Cliente | MulinoTech</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/image/favicon.ico" type="image/x-icon" />
+    
+    <!-- Tailwind CSS com Plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    
+    <!-- Configuração do Tailwind -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#c7bfff",
+                        "on-primary-container": "#25008c",
+                        "tertiary-fixed": "#ffe08f",
+                        "deep-space": "#060608",
+                        "surface-variant": "#353437",
+                        "surface-container": "#201f22",
+                        "tertiary": "#e6c364",
+                        "secondary": "#44e2cd",
+                        "primary-container": "#8e7fff",
+                        "on-primary": "#2b009e",
+                        "frost-white": "#F0F0F5",
+                        "on-surface": "#e5e1e5",
+                        "secondary-fixed-dim": "#3cddc7",
+                        "on-primary-fixed-variant": "#4229b9",
+                        "on-secondary-fixed": "#00201c",
+                        "void-navy": "#0B0B1A",
+                        "on-tertiary-container": "#503d00",
+                        "on-secondary": "#003731",
+                        "neon-cyan": "#2DD4BF",
+                        "surface-dim": "#131316",
+                        "surface-container-highest": "#353437",
+                        "on-secondary-fixed-variant": "#005047",
+                        "tertiary-container": "#c9a84c",
+                        "surface-container-high": "#2a2a2c",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#e6c364",
+                        "on-secondary-container": "#004d44",
+                        "surface-container-lowest": "#0e0e10",
+                        "outline": "#928ea0",
+                        "on-primary-fixed": "#180065",
+                        "surface": "#131316",
+                        "primary": "#c7bfff",
+                        "on-surface-variant": "#c9c4d6",
+                        "electric-violet": "#7C6AF5",
+                        "background": "#131316",
+                        "surface-container-low": "#1c1b1e",
+                        "on-tertiary-fixed": "#241a00",
+                        "surface-tint": "#c7bfff",
+                        "on-tertiary": "#3d2e00",
+                        "plasma-gold": "#C9A84C",
+                        "surface-bright": "#39393c",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#e5deff",
+                        "inverse-surface": "#e5e1e5",
+                        "on-error": "#690005",
+                        "inverse-on-surface": "#313033",
+                        "on-tertiary-fixed-variant": "#584400",
+                        "secondary-fixed": "#62fae3",
+                        "on-background": "#e5e1e5",
+                        "inverse-primary": "#5b46d2",
+                        "glass-stroke": "rgba(240, 240, 245, 0.12)",
+                        "secondary-container": "#03c6b2",
+                        "error-container": "#93000a",
+                        "outline-variant": "#474554"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Sora"],
+                        "code-label": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Sora"],
+                        "display-lg-mobile": ["Sora"],
+                        "headline-sm": ["Sora"],
+                        "body-md": ["Inter"],
+                        "cta-label": ["Sora"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "code-label": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "cta-label": ["16px", { "lineHeight": "100%", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    
+    <!-- Script de Proteção de Rota (Executado antes do body carregar para evitar FOUC/piscar página privada) -->
+    <script>
+        if (sessionStorage.getItem('logged_in') !== 'true') {
+            window.location.href = 'login.html';
+        }
+    </script>
+
+    <!-- Folha de Estilos Externa -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+</head>
+<body class="font-body-md selection:bg-neon-cyan selection:text-void-navy min-h-screen flex flex-col">
+    <!-- Efeito de brilho do mouse -->
+    <div class="mouse-glow" id="glow"></div>
+    
+    <!-- Barra de Navegação -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-deep-space/70 backdrop-blur-xl border-b border-glass-stroke shadow-lg transition-all duration-300">
+        <div class="flex justify-between items-center px-6 py-4 max-w-container-max mx-auto">
+            <a href="index.html" class="flex items-center">
+                <img src="assets/image/logo_mulinotech_branco.png" alt="MulinoTech" class="h-[60px] md:h-[80px] w-auto object-contain hover:scale-105 transition-transform duration-300 rounded-lg" fetchpriority="high" width="200" height="80" />
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 hover:translate-y-[-2px] font-headline-sm text-[16px]" href="index.html">Home</a>
+                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 hover:translate-y-[-2px] font-headline-sm text-[16px]" href="quem-somos.html">Quem Somos</a>
+                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 hover:translate-y-[-2px] font-headline-sm text-[16px]" href="servicos.html">Serviços</a>
+                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 hover:translate-y-[-2px] font-headline-sm text-[16px]" href="produtos.html">Produtos</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-neon-cyan/20 bg-neon-cyan/5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-neon-cyan animate-pulse"></span>
+                    <span id="user-display" class="font-code-label text-xs text-neon-cyan max-w-[120px] truncate">cliente@mulinotech...</span>
+                </div>
+                
+                <button id="logout-btn" class="flex items-center gap-1 bg-white/5 border border-glass-stroke hover:bg-red-500/10 hover:border-red-500/30 hover:text-red-400 font-cta-label py-2 px-4 rounded-lg transition-all text-xs text-on-surface" title="Encerrar Sessão">
+                    <span class="material-symbols-outlined text-sm">logout</span>
+                    <span class="hidden sm:inline">Sair</span>
+                </button>
+                
+                <!-- Botão Menu Mobile -->
+                <button id="mobile-menu-btn" class="flex md:hidden p-2 text-on-surface hover:text-neon-cyan focus:outline-none transition-colors" aria-label="Abrir Menu">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Gaveta Mobile -->
+        <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-[#1c1b1e] border-l border-glass-stroke shadow-2xl p-6 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+            <div class="flex justify-between items-center mb-10">
+                <img src="assets/image/logo_mulinotech_branco.png" alt="MulinoTech" class="h-[80px] w-auto object-contain" width="200" height="80" />
+                <button id="mobile-menu-close" class="p-2 text-on-surface hover:text-neon-cyan focus:outline-none transition-colors" aria-label="Fechar Menu">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+            </div>
+            <div class="flex flex-col gap-6 font-headline-sm text-lg">
+                <a class="text-on-surface-variant hover:text-primary transition-colors pl-3 py-2" href="index.html">Home</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors pl-3 py-2" href="quem-somos.html">Quem Somos</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors pl-3 py-2" href="servicos.html">Serviços</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors pl-3 py-2" href="produtos.html">Produtos</a>
+            </div>
+            <div class="mt-12 pt-8 border-t border-glass-stroke space-y-6">
+                <button id="mobile-logout-btn" class="w-full bg-red-500/10 border border-red-500/20 hover:bg-red-500/20 text-red-400 font-cta-label py-3 px-6 rounded-lg flex items-center justify-center gap-2 text-sm">
+                    <span class="material-symbols-outlined">logout</span>
+                    Encerrar Sessão
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main class="relative z-10 flex-grow pt-32 pb-20 px-4 md:px-margin-desktop max-w-container-max mx-auto w-full">
+        <!-- Header do Dashboard -->
+        <div class="mb-12">
+            <div class="inline-block px-4 py-1 rounded-full border border-neon-cyan/30 bg-neon-cyan/10 text-neon-cyan font-code-label text-xs mb-4 uppercase tracking-widest">
+                Painel Consolidado de Aplicações
+            </div>
+            <h1 class="font-display-lg text-4xl md:text-5xl leading-tight mb-4">
+                Seu Ecossistema <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-electric-violet italic">de Vanguarda</span>
+            </h1>
+            <p class="font-body-lg text-on-surface-variant max-w-2xl">
+                Selecione um dos sistemas integrados abaixo para acessar sua respectiva aplicação em subdomínio seguro.
+            </p>
+        </div>
+
+        <!-- Grade de Aplicações -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <!-- Card 1: Wishlist -->
+            <div class="app-card glass-panel p-6 rounded-2xl border border-glass-stroke flex flex-col justify-between group hover:scale-[1.03] hover:border-primary/50 transition-all duration-300 shadow-lg cursor-pointer" data-app-name="Wishlist (Lista de Desejos)" data-app-url="https://wl.mulinotech.com/admin/">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-primary-container/10 border border-primary-container/30 flex items-center justify-center text-primary-fixed-dim mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-2xl">favorite</span>
+                    </div>
+                    <span class="font-code-label text-xs text-primary-fixed-dim uppercase tracking-wider block mb-2">E-Commerce Addon</span>
+                    <h3 class="font-headline-sm text-lg text-on-surface mb-3 group-hover:text-primary transition-colors">Wishlist</h3>
+                    <p class="text-on-surface-variant text-sm font-body-md line-clamp-4">
+                        Ecossistema de remarketing baseado em intenção de compra. Sincronize listas de desejos e crie ofertas automatizadas em tempo real.
+                    </p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-glass-stroke/30 flex items-center justify-between">
+                    <span class="font-code-label text-[11px] text-on-surface-variant/60">wl.mulinotech.com/admin/</span>
+                    <span class="material-symbols-outlined text-primary text-lg group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                </div>
+            </div>
+
+            <!-- Card 2: Mulino AI -->
+            <div class="app-card glass-panel p-6 rounded-2xl border border-glass-stroke flex flex-col justify-between group hover:scale-[1.03] hover:border-secondary/50 transition-all duration-300 shadow-lg cursor-pointer" data-app-name="Mulino AI (Chat Commerce)" data-app-url="https://ai.mulinotech.com">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-secondary-container/10 border border-secondary-container/30 flex items-center justify-center text-secondary-fixed-dim mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-2xl">smart_toy</span>
+                    </div>
+                    <span class="font-code-label text-xs text-secondary-fixed-dim uppercase tracking-wider block mb-2">Inteligência Artificial</span>
+                    <h3 class="font-headline-sm text-lg text-on-surface mb-3 group-hover:text-secondary transition-colors">Mulino AI</h3>
+                    <p class="text-on-surface-variant text-sm font-body-md line-clamp-4">
+                        Interface conversacional orientada a dados. Gerencie o aprendizado de sua IA, configure regras de checkout automatizado e analise leads.
+                    </p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-glass-stroke/30 flex items-center justify-between">
+                    <span class="font-code-label text-[11px] text-on-surface-variant/60">ai.mulinotech.com</span>
+                    <span class="material-symbols-outlined text-secondary text-lg group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                </div>
+            </div>
+
+            <!-- Card 3: Mulino Lover -->
+            <div class="app-card glass-panel p-6 rounded-2xl border border-glass-stroke flex flex-col justify-between group hover:scale-[1.03] hover:border-tertiary/50 transition-all duration-300 shadow-lg cursor-pointer" data-app-name="Mulino Lover (BI & Analytics)" data-app-url="https://lover.mulinotech.com">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-tertiary-container/10 border border-tertiary-container/30 flex items-center justify-center text-tertiary mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-2xl">query_stats</span>
+                    </div>
+                    <span class="font-code-label text-xs text-tertiary uppercase tracking-wider block mb-2">Business Intelligence</span>
+                    <h3 class="font-headline-sm text-lg text-on-surface mb-3 group-hover:text-tertiary transition-colors">Mulino Lover</h3>
+                    <p class="text-on-surface-variant text-sm font-body-md line-clamp-4">
+                        Painel analítico para Olist Commerce. Predição de demanda, inteligência preditiva de supply chain e otimização de margens operacionais.
+                    </p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-glass-stroke/30 flex items-center justify-between">
+                    <span class="font-code-label text-[11px] text-on-surface-variant/60">lover.mulinotech.com</span>
+                    <span class="material-symbols-outlined text-tertiary text-lg group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                </div>
+            </div>
+
+            <!-- Card 4: API Gateway -->
+            <div class="app-card glass-panel p-6 rounded-2xl border border-glass-stroke flex flex-col justify-between group hover:scale-[1.03] hover:border-neon-cyan/50 transition-all duration-300 shadow-lg cursor-pointer" data-app-name="API Gateway (Integrações)" data-app-url="https://api.mulinotech.com">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-neon-cyan/10 border border-neon-cyan/30 flex items-center justify-center text-neon-cyan mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-2xl">api</span>
+                    </div>
+                    <span class="font-code-label text-xs text-neon-cyan uppercase tracking-wider block mb-2">DevOps &amp; APIs</span>
+                    <h3 class="font-headline-sm text-lg text-on-surface mb-3 group-hover:text-neon-cyan transition-colors">API Gateway</h3>
+                    <p class="text-on-surface-variant text-sm font-body-md line-clamp-4">
+                        Hub central de integrações corporativas. Monitore webhooks, gerencie chaves criptográficas e controle fluxos de dados ERP/CRM.
+                    </p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-glass-stroke/30 flex items-center justify-between">
+                    <span class="font-code-label text-[11px] text-on-surface-variant/60">api.mulinotech.com</span>
+                    <span class="material-symbols-outlined text-neon-cyan text-lg group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Modal de Transição de Terminal Futurista -->
+    <div id="terminal-modal" class="fixed inset-0 z-50 flex items-center justify-center px-4 bg-deep-space/90 backdrop-blur-md hidden transition-all duration-300 opacity-0">
+        <div class="w-full max-w-[600px] glass-panel rounded-2xl border border-glass-stroke/60 shadow-[0_0_50px_rgba(45,212,191,0.2)] overflow-hidden">
+            <!-- Barra de Título do Terminal -->
+            <div class="bg-surface-container-low px-4 py-3 flex items-center justify-between border-b border-glass-stroke/30">
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                    <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                    <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+                </div>
+                <span class="font-code-label text-[11px] text-on-surface-variant/80 tracking-widest uppercase">MulinoTech Secure Connect</span>
+                <span class="w-8"></span> <!-- Spacing -->
+            </div>
+            
+            <!-- Conteúdo da Tela do Terminal -->
+            <div class="p-6 bg-deep-space text-[#2DD4BF] font-code-label text-xs min-h-[280px] max-h-[350px] overflow-y-auto space-y-2.5" id="terminal-screen">
+                <!-- Linhas do terminal serão inseridas aqui dinamicamente -->
+            </div>
+            
+            <!-- Rodapé do Terminal -->
+            <div class="bg-surface-container-low/40 px-6 py-4 border-t border-glass-stroke/20 flex justify-between items-center text-[10px] font-code-label text-on-surface-variant/40">
+                <span>CANAL: SSL_TLS_v1.3</span>
+                <span>STATUS: CONECTANDO...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="bg-void-navy w-full mt-auto relative overflow-hidden border-t border-glass-stroke shadow-[0_-20px_50px_rgba(6,6,8,0.8)]">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-12 max-w-container-max mx-auto relative z-10">
+            <div class="col-span-1 md:col-span-1">
+                <div class="font-headline-sm text-headline-sm text-primary-fixed-dim mb-6">MulinoTech</div>
+                <p class="font-body-md text-on-surface-variant mb-6">15 anos de engenharia e estratégia estruturando vantagens competitivas sustentáveis.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="material-symbols-outlined text-primary hover:text-neon-cyan transition-colors p-1" aria-label="Terminal Protocol">terminal</a>
+                    <a href="#" class="material-symbols-outlined text-primary hover:text-neon-cyan transition-colors p-1" aria-label="Database Hub">database</a>
+                    <a href="#" class="material-symbols-outlined text-primary hover:text-neon-cyan transition-colors p-1" aria-label="Cloud Platform">cloud</a>
+                </div>
+            </div>
+            <div>
+                <h5 class="text-on-surface font-headline-sm text-[16px] mb-6">Empresa</h5>
+                <ul class="space-y-4 font-body-md text-on-surface-variant">
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="quem-somos.html">Quem Somos</a></li>
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="servicos.html">Serviços</a></li>
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="produtos.html">Produtos</a></li>
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="index.html#contato">Contato</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-on-surface font-headline-sm text-[16px] mb-6">Produtos</h5>
+                <ul class="space-y-4 font-body-md text-on-surface-variant">
+                    <li class=""><a class="hover:text-neon-cyan transition-colors duration-200" href="produtos.html">Mulino AI</a></li>
+                    <li class=""><a class="hover:text-neon-cyan transition-colors duration-200" href="produtos.html">Mulino Lover</a></li>
+                    <li class=""><a class="hover:text-neon-cyan transition-colors duration-200" href="#">API Documentation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-on-surface font-headline-sm text-[16px] mb-6">Legal</h5>
+                <ul class="space-y-4 font-body-md text-on-surface-variant">
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="#">Privacidade</a></li>
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="#">Segurança</a></li>
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="#">Termos de Uso</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-glass-stroke/30 py-8 px-margin-desktop text-center">
+            <p class="font-body-md text-on-surface-variant text-sm">© 2024 MulinoTech. Neural Interface Protocol v1.0.4</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Exibir email do usuário no topo
+            const email = sessionStorage.getItem('user_email') || 'cliente@mulinotech.com';
+            const userDisplay = document.getElementById('user-display');
+            if (userDisplay) {
+                userDisplay.textContent = email;
+            }
+
+            // Ação de Logout
+            const handleLogout = () => {
+                sessionStorage.removeItem('logged_in');
+                sessionStorage.removeItem('user_email');
+                window.location.href = 'login.html';
+            };
+
+            const logoutBtn = document.getElementById('logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', handleLogout);
+            }
+
+            const mobileLogoutBtn = document.getElementById('mobile-logout-btn');
+            if (mobileLogoutBtn) {
+                mobileLogoutBtn.addEventListener('click', handleLogout);
+            }
+
+            // Modal de Redirecionamento Terminal
+            const appCards = document.querySelectorAll('.app-card');
+            const modal = document.getElementById('terminal-modal');
+            const screen = document.getElementById('terminal-screen');
+
+            appCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const appName = card.getAttribute('data-app-name');
+                    const appUrl = card.getAttribute('data-app-url');
+
+                    // Preparar tela do terminal
+                    screen.innerHTML = '';
+                    modal.classList.remove('hidden');
+                    
+                    // Trigger reflow para animação de fade-in
+                    setTimeout(() => {
+                        modal.classList.remove('opacity-0');
+                    }, 50);
+
+                    // Sequência de logs de terminal futuristas em português
+                    const logs = [
+                        `[MULINO-SECURE] Protocolo de Handshake inicializado.`,
+                        `[MULINO-SECURE] Estabelecendo tunelamento SSH/TLS...`,
+                        `[REDE] Resolvendo DNS: ${appUrl.replace('https://', '')}...`,
+                        `[REDE] IP resolvido para canal de subdomínio seguro.`,
+                        `[MULINO-SECURE] Autenticando canal criptográfico...`,
+                        `[MULINO-SECURE] Token de sessão verificado: OK`,
+                        `[APLICAÇÃO] Estabelecendo conexão com ${appName}...`,
+                        `[APLICAÇÃO] Chaves de gateway aceitas para ${appName}.`,
+                        `[MULINO-SECURE] Redirecionamento autorizado. Conectando...`
+                    ];
+
+                    let logIndex = 0;
+                    
+                    function printNextLog() {
+                        if (logIndex < logs.length) {
+                            const p = document.createElement('p');
+                            p.className = 'opacity-0 transition-opacity duration-300';
+                            
+                            // Adicionar cor diferente com base na mensagem para visual mais rico
+                            if (logs[logIndex].includes('[MULINO-SECURE]')) {
+                                p.innerHTML = `<span class="text-[#7C6AF5] font-semibold">${logs[logIndex].split(' ')[0]}</span> ${logs[logIndex].substring(logs[logIndex].indexOf(' ') + 1)}`;
+                            } else if (logs[logIndex].includes('[REDE]')) {
+                                p.innerHTML = `<span class="text-amber-400 font-semibold">${logs[logIndex].split(' ')[0]}</span> ${logs[logIndex].substring(logs[logIndex].indexOf(' ') + 1)}`;
+                            } else if (logs[logIndex].includes('[APLICAÇÃO]')) {
+                                p.innerHTML = `<span class="text-pink-500 font-semibold">${logs[logIndex].split(' ')[0]}</span> ${logs[logIndex].substring(logs[logIndex].indexOf(' ') + 1)}`;
+                            } else {
+                                p.textContent = logs[logIndex];
+                            }
+
+                            screen.appendChild(p);
+                            
+                            // Forçar scroll para baixo
+                            screen.scrollTop = screen.scrollHeight;
+                            
+                            // Fade in da linha
+                            setTimeout(() => {
+                                p.classList.remove('opacity-0');
+                            }, 50);
+
+                            logIndex++;
+                            // Atraso variado entre linhas para simular rede real
+                            const delay = Math.random() * 300 + 200;
+                            setTimeout(printNextLog, delay);
+                        } else {
+                            // Cursor piscando ao final
+                            const cursorSpan = document.createElement('span');
+                            cursorSpan.className = 'inline-block w-2.5 h-4 bg-[#2DD4BF] animate-pulse ml-1 align-middle';
+                            screen.appendChild(cursorSpan);
+
+                            // Redirecionar após breve delay
+                            setTimeout(() => {
+                                modal.classList.add('opacity-0');
+                                setTimeout(() => {
+                                    modal.classList.add('hidden');
+                                    // Abrir subdomínio em nova aba ou mesma aba (usuário solicitou ser redirecionado para a aplicação escolhida)
+                                    window.open(appUrl, '_blank');
+                                }, 300);
+                            }, 800);
+                        }
+                    }
+
+                    // Iniciar impressão dos logs
+                    setTimeout(printNextLog, 300);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

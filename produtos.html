@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Produtos | MulinoTech</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/image/favicon.ico" type="image/x-icon" />
+    
+    <!-- Tailwind CSS com Plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Google Fonts com pré-carregamento e display-swap para evitar bloqueios de renderização -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    
+    <!-- Configuração do Tailwind -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#c7bfff",
+                        "on-primary-container": "#25008c",
+                        "tertiary-fixed": "#ffe08f",
+                        "deep-space": "#060608",
+                        "surface-variant": "#353437",
+                        "surface-container": "#201f22",
+                        "tertiary": "#e6c364",
+                        "secondary": "#44e2cd",
+                        "primary-container": "#8e7fff",
+                        "on-primary": "#2b009e",
+                        "frost-white": "#F0F0F5",
+                        "on-surface": "#e5e1e5",
+                        "secondary-fixed-dim": "#3cddc7",
+                        "on-primary-fixed-variant": "#4229b9",
+                        "on-secondary-fixed": "#00201c",
+                        "void-navy": "#0B0B1A",
+                        "on-tertiary-container": "#503d00",
+                        "on-secondary": "#003731",
+                        "neon-cyan": "#2DD4BF",
+                        "surface-dim": "#131316",
+                        "surface-container-highest": "#353437",
+                        "on-secondary-fixed-variant": "#005047",
+                        "tertiary-container": "#c9a84c",
+                        "surface-container-high": "#2a2a2c",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#e6c364",
+                        "on-secondary-container": "#004d44",
+                        "surface-container-lowest": "#0e0e10",
+                        "outline": "#928ea0",
+                        "on-primary-fixed": "#180065",
+                        "surface": "#131316",
+                        "primary": "#c7bfff",
+                        "on-surface-variant": "#c9c4d6",
+                        "electric-violet": "#7C6AF5",
+                        "background": "#131316",
+                        "surface-container-low": "#1c1b1e",
+                        "on-tertiary-fixed": "#241a00",
+                        "surface-tint": "#c7bfff",
+                        "on-tertiary": "#3d2e00",
+                        "plasma-gold": "#C9A84C",
+                        "surface-bright": "#39393c",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#e5deff",
+                        "inverse-surface": "#e5e1e5",
+                        "on-error": "#690005",
+                        "inverse-on-surface": "#313033",
+                        "on-tertiary-fixed-variant": "#584400",
+                        "secondary-fixed": "#62fae3",
+                        "on-background": "#e5e1e5",
+                        "inverse-primary": "#5b46d2",
+                        "glass-stroke": "rgba(240, 240, 245, 0.12)",
+                        "secondary-container": "#03c6b2",
+                        "error-container": "#93000a",
+                        "outline-variant": "#474554"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Sora"],
+                        "code-label": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Sora"],
+                        "display-lg-mobile": ["Sora"],
+                        "headline-sm": ["Sora"],
+                        "body-md": ["Inter"],
+                        "cta-label": ["Sora"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "code-label": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "cta-label": ["16px", { "lineHeight": "100%", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    
+    <!-- Folha de Estilos Externa -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+</head>
+<body class="font-body-md selection:bg-neon-cyan selection:text-void-navy">
+    <div class="mouse-glow" id="glow" style="left: 1px; top: 624px;"></div>
+    
+    <!-- Barra de Navegação Fixa de Largura Total -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-deep-space/70 backdrop-blur-xl border-b border-glass-stroke shadow-lg transition-all duration-300">
+        <div class="flex justify-between items-center px-6 py-4 max-w-container-max mx-auto">
+            <a href="index.html" class="flex items-center">
+                <img src="assets/image/logo_mulinotech_branco.png" alt="MulinoTech" class="h-[60px] md:h-[80px] w-auto object-contain hover:scale-105 transition-transform duration-300 rounded-lg" fetchpriority="high" width="200" height="80" />
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 hover:translate-y-[-2px] font-headline-sm text-[16px]" href="index.html">Home</a>
+                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 hover:translate-y-[-2px] font-headline-sm text-[16px]" href="quem-somos.html">Quem Somos</a>
+                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 hover:translate-y-[-2px] font-headline-sm text-[16px]" href="servicos.html">Serviços</a>
+                <a class="text-neon-cyan border-b-2 border-neon-cyan pb-1 font-headline-sm text-[16px]" href="produtos.html">Produtos</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="login.html" id="nav-login-icon" class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform" title="Área do Cliente / Login">account_circle</a>
+                <a href="index.html#contato" class="hidden sm:flex bg-electric-violet text-on-primary font-cta-label py-2 px-6 rounded-lg btn-3d glow-violet shadow-[0_4px_0_#4229b9] items-center justify-center text-sm">Fale com um Especialista</a>
+                
+                <!-- Botão Menu Mobile (Hamburguer) -->
+                <button id="mobile-menu-btn" class="flex md:hidden p-2 text-on-surface hover:text-neon-cyan focus:outline-none transition-colors" aria-label="Abrir Menu">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Gaveta de Navegação Mobile (Mobile Menu Drawer) -->
+        <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-[#1c1b1e] border-l border-glass-stroke shadow-2xl p-6 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+            <div class="flex justify-between items-center mb-10">
+                <img src="assets/image/logo_mulinotech_branco.png" alt="MulinoTech" class="h-[80px] w-auto object-contain" width="200" height="80" />
+                <button id="mobile-menu-close" class="p-2 text-on-surface hover:text-neon-cyan focus:outline-none transition-colors" aria-label="Fechar Menu">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+            </div>
+            <div class="flex flex-col gap-6 font-headline-sm text-lg">
+                <a class="text-on-surface-variant hover:text-primary transition-colors pl-3 py-2" href="index.html">Home</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors pl-3 py-2" href="quem-somos.html">Quem Somos</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors pl-3 py-2" href="servicos.html">Serviços</a>
+                <a class="text-neon-cyan border-l-2 border-neon-cyan pl-3 py-2" href="produtos.html">Produtos</a>
+            </div>
+            <div class="mt-12 pt-8 border-t border-glass-stroke space-y-6">
+                <a href="index.html#contato" class="w-full bg-electric-violet text-on-primary font-cta-label py-3 px-6 rounded-lg btn-3d glow-violet shadow-[0_4px_0_#4229b9] flex items-center justify-center text-sm">Fale com um Especialista</a>
+                <div class="flex justify-center gap-6 mt-6">
+                    <a href="#" class="material-symbols-outlined text-primary hover:text-neon-cyan transition-colors text-2xl p-2" aria-label="Terminal Protocol">terminal</a>
+                    <a href="#" class="material-symbols-outlined text-primary hover:text-neon-cyan transition-colors text-2xl p-2" aria-label="Database Hub">database</a>
+                    <a href="#" class="material-symbols-outlined text-primary hover:text-neon-cyan transition-colors text-2xl p-2" aria-label="Cloud Platform">cloud</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-12 pb-24 px-4 md:px-margin-desktop max-w-container-max mx-auto relative">
+        <!-- Background Decorativo -->
+        <div class="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
+            <div class="absolute top-1/4 -right-1/4 w-[600px] h-[600px] bg-electric-violet/10 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-1/4 -left-1/4 w-[500px] h-[500px] bg-neon-cyan/5 rounded-full blur-[100px]"></div>
+        </div>
+
+        <!-- Hero: Catálogo de Produtos -->
+        <header class="mb-24 text-center md:text-left relative">
+            <div class="inline-block px-3 py-1 rounded-full bg-surface-container-high border border-glass-stroke mb-4">
+                <span class="font-code-label text-neon-cyan uppercase">Protocolo de Inovação v1.0.4</span>
+            </div>
+            <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6 leading-tight">
+                Tecnologia que Escala <br />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-neon-cyan">Sozinha</span>
+            </h1>
+            <p class="font-body-lg text-on-surface-variant max-w-2xl">
+                Conheça nossos Produtos SaaS Proprietários. Soluções integradas com inteligência neural desenhadas para otimizar cada etapa da jornada comercial digital.
+            </p>
+        </header>
+
+        <!-- Product Cards (Mulino AI & Mulino Lover) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-32">
+            <!-- Mulino AI Card -->
+            <section class="glass-panel rounded-3xl p-6 md:p-12 group transition-all duration-500 overflow-hidden relative">
+                <div class="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-40 transition-opacity">
+                    <span class="material-symbols-outlined text-[120px] text-primary">psychology</span>
+                </div>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center">
+                            <span class="material-symbols-outlined text-on-primary-container">smart_toy</span>
+                        </div>
+                        <h2 class="font-headline-md text-headline-md text-primary">Mulino AI</h2>
+                    </div>
+                    <p class="font-body-lg text-on-surface-variant mb-8">A plataforma definitiva de Conversational Commerce com Venda Consultiva automatizada e Checkout Nativo para converter conversas em lucro real.</p>
+                    <div class="grid grid-cols-2 gap-4 mb-10">
+                        <div class="bg-surface-container-low border border-glass-stroke p-4 rounded-2xl">
+                            <span class="font-code-label text-neon-cyan block mb-1">CONVERSÃO</span>
+                            <span class="font-display-lg text-headline-md">+42%</span>
+                        </div>
+                        <div class="bg-surface-container-low border border-glass-stroke p-4 rounded-2xl">
+                            <span class="font-code-label text-electric-violet block mb-1">CUSTO SAC</span>
+                            <span class="font-display-lg text-headline-md">-65%</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-neon-cyan">check_circle</span>
+                            <span class="font-body-md">Venda Consultiva via IA Generativa</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-neon-cyan">check_circle</span>
+                            <span class="font-body-md">Checkout Nativo (WhatsApp &amp; Web)</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-neon-cyan">check_circle</span>
+                            <span class="font-body-md">Integração em Tempo Real com ERPs</span>
+                        </li>
+                    </ul>
+                    <a href="index.html#contato" class="block w-full text-center bg-primary text-on-primary font-cta-label py-4 rounded-xl shadow-[0_0_20px_rgba(199,191,255,0.3)] hover:brightness-110 transition-all">
+                        Solicitar Demonstração
+                    </a>
+                </div>
+                <div class="mt-12 rounded-xl overflow-hidden border border-glass-stroke shadow-2xl">
+                    <img alt="Visualização da interface do Mulino AI" class="w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 h-64" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdT6Tm5K3yW8ifNJaNSfDo-ILWO8ml5QbAU3yf4WmCKPWy29N4wYvB14iGnAAc00J15Tvm4fkIAXACV3m1TfMUlkAQ1jmbT6BvUlPi2-GjksJbcxf9dz-LQJvTIK6Tbxdh75gNtKGHeXwyIKhHG3WsTLyH34XuZFjrLkyyhACQs8bBfpXEEJnrZi0gCJRg3hsrBhcg7ROn0xcE6_gqct9nXQObnpaQdIpJEdjMBCWukVLGRovsvul1ZO5fIeVBSJI7P2iFG3Bb91o" loading="lazy" width="600" height="256" />
+                </div>
+            </section>
+
+            <!-- Mulino Lover Card -->
+            <section class="glass-panel rounded-3xl p-6 md:p-12 group transition-all duration-500 overflow-hidden relative">
+                <div class="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-40 transition-opacity">
+                    <span class="material-symbols-outlined text-[120px] text-tertiary">analytics</span>
+                </div>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-tertiary-container flex items-center justify-center">
+                            <span class="material-symbols-outlined text-on-tertiary-container">query_stats</span>
+                        </div>
+                        <h2 class="font-headline-md text-headline-md text-tertiary">Mulino Lover</h2>
+                    </div>
+                    <p class="font-body-lg text-on-surface-variant mb-8">O Business Intelligence definitivo para o ecossistema Olist Commerce. Remarketing de Precisão e inteligência preditiva para dominar o marketplace.</p>
+                    <div class="grid grid-cols-2 gap-4 mb-10">
+                        <div class="bg-surface-container-low border border-glass-stroke p-4 rounded-2xl">
+                            <span class="font-code-label text-plasma-gold block mb-1">AUMENTO LTV</span>
+                            <span class="font-display-lg text-headline-md">3.2x</span>
+                        </div>
+                        <div class="bg-surface-container-low border border-glass-stroke p-4 rounded-2xl">
+                            <span class="font-code-label text-neon-cyan block mb-1">CHURN REDUX</span>
+                            <span class="font-display-lg text-headline-md">18%</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-plasma-gold">check_circle</span>
+                            <span class="font-body-md">Remarketing de Precisão (Cross-sell)</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-plasma-gold">check_circle</span>
+                            <span class="font-body-md">Dashboards Olist de Alta Performance</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-plasma-gold">check_circle</span>
+                            <span class="font-body-md">Previsão de Demanda via Redes Neurais</span>
+                        </li>
+                    </ul>
+                    <a href="index.html#contato" class="block w-full text-center border-2 border-tertiary text-tertiary font-cta-label py-4 rounded-xl hover:bg-tertiary hover:text-on-tertiary transition-all">
+                        Explorar BI Suite
+                    </a>
+                </div>
+                <div class="mt-12 rounded-xl overflow-hidden border border-glass-stroke shadow-2xl">
+                    <img alt="Visualização do dashboard do Mulino Lover" class="w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 h-64" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBqFmn7IDaPFGe65B7kqr5Frv2kAteLTZVslwkm94lse9cxZHe9mf7ZWA20qVpBQoj7QOc1CuunSRL2JAR-ljPWGxhmByhaXIXnOwwhsEtQhHM21ybKlp6VvB-k-ERTjmbFLnEMXRFTz5lLB1q6YXyIPMmIrgb3naZf5CUQzTy1QWRt3pAxQHKEZlgAsh59_yo_XEiEbSLnQ7RuLqGNQU9qKxwUjz_iYHa3pYPYoRZuZubxLoYdjp6DPza7M9No9oKQzUvyCqWy1w" loading="lazy" width="600" height="256" />
+                </div>
+            </section>
+        </div>
+
+        <!-- Metric Highlight Section -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-32">
+            <div class="glass-panel p-6 rounded-2xl flex items-center gap-4">
+                <div class="w-14 h-14 rounded-full bg-electric-violet/20 flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-electric-violet">hub</span>
+                </div>
+                <div>
+                    <h4 class="font-headline-sm text-body-md font-bold">+150 Integrações</h4>
+                    <p class="text-on-surface-variant text-sm">Conectividade global nativa</p>
+                </div>
+            </div>
+            <div class="glass-panel p-6 rounded-2xl flex items-center gap-4">
+                <div class="w-14 h-14 rounded-full bg-neon-cyan/20 flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-neon-cyan">verified_user</span>
+                </div>
+                <div>
+                    <h4 class="font-headline-sm text-body-md font-bold">Segurança Neural</h4>
+                    <p class="text-on-surface-variant text-sm">Proteção de dados nível militar</p>
+                </div>
+            </div>
+            <div class="glass-panel p-6 rounded-2xl flex items-center gap-4">
+                <div class="w-14 h-14 rounded-full bg-plasma-gold/20 flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-plasma-gold">speed</span>
+                </div>
+                <div>
+                    <h4 class="font-headline-sm text-body-md font-bold">Sync em Tempo Real</h4>
+                    <p class="text-on-surface-variant text-sm">Latência zero em operações</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <section class="relative">
+            <div class="glass-panel p-12 md:p-20 rounded-[32px] text-center relative overflow-hidden glow-shadow-cyan">
+                <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-neon-cyan/20 blur-[100px] rounded-full"></div>
+                <div class="absolute -top-20 -left-20 w-80 h-80 bg-electric-violet/20 blur-[100px] rounded-full"></div>
+                <h2 class="font-display-lg text-headline-md md:text-display-lg text-on-background mb-8 leading-tight">
+                    Pronto para a Próxima <br /><span class="text-neon-cyan">Interface da Realidade?</span>
+                </h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
+                    Nossa equipe de especialistas está pronta para ajudar na integração de nossas ferramentas SaaS à sua infraestrutura existente.
+                </p>
+                <div class="flex flex-col md:flex-row gap-6 justify-center">
+                    <a href="index.html#contato" class="bg-neon-cyan text-void-navy px-10 py-5 rounded-xl font-headline-sm hover:scale-105 transition-all duration-300 shadow-[0_10px_30px_rgba(45,212,191,0.3)] flex items-center justify-center">
+                        Agendar Demonstração
+                    </a>
+                    <a href="servicos.html" class="glass-panel text-on-surface px-10 py-5 rounded-xl font-headline-sm hover:bg-white/5 transition-all duration-300 flex items-center justify-center">
+                        Conhecer Nossos Serviços
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé Estático -->
+    <footer class="bg-void-navy w-full mt-auto relative overflow-hidden border-t border-glass-stroke shadow-[0_-20px_50px_rgba(6,6,8,0.8)]">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-12 max-w-container-max mx-auto relative z-10">
+            <div class="col-span-1 md:col-span-1">
+                <div class="font-headline-sm text-headline-sm text-primary-fixed-dim mb-6">MulinoTech</div>
+                <p class="font-body-md text-on-surface-variant mb-6">15 anos de engenharia e estratégia estruturando vantagens competitivas sustentáveis.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="material-symbols-outlined text-primary hover:text-neon-cyan transition-colors p-1" aria-label="Terminal Protocol">terminal</a>
+                    <a href="#" class="material-symbols-outlined text-primary hover:text-neon-cyan transition-colors p-1" aria-label="Database Hub">database</a>
+                    <a href="#" class="material-symbols-outlined text-primary hover:text-neon-cyan transition-colors p-1" aria-label="Cloud Platform">cloud</a>
+                </div>
+            </div>
+            <div>
+                <h5 class="text-on-surface font-headline-sm text-[16px] mb-6">Empresa</h5>
+                <ul class="space-y-4 font-body-md text-on-surface-variant">
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="quem-somos.html">Quem Somos</a></li>
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="servicos.html">Serviços</a></li>
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="produtos.html">Produtos</a></li>
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="index.html#contato">Contato</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-on-surface font-headline-sm text-[16px] mb-6">Produtos</h5>
+                <ul class="space-y-4 font-body-md text-on-surface-variant">
+                    <li class=""><a class="hover:text-neon-cyan transition-colors duration-200" href="produtos.html">Mulino AI</a></li>
+                    <li class=""><a class="hover:text-neon-cyan transition-colors duration-200" href="produtos.html">Mulino Lover</a></li>
+                    <li class=""><a class="hover:text-neon-cyan transition-colors duration-200" href="#">API Documentation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-on-surface font-headline-sm text-[16px] mb-6">Legal</h5>
+                <ul class="space-y-4 font-body-md text-on-surface-variant">
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="#">Privacidade</a></li>
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="#">Segurança</a></li>
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="#">Termos de Uso</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-glass-stroke/30 py-8 px-margin-desktop text-center">
+            <p class="font-body-md text-on-surface-variant text-sm">© 2024 MulinoTech. Neural Interface Protocol v1.0.4</p>
+        </div>
+    </footer>
+    
+    <!-- Script Global -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

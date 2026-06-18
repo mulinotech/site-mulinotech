@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Quem Somos | MulinoTech</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/image/favicon.ico" type="image/x-icon" />
+    
+    <!-- Tailwind CSS com Plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Google Fonts com pré-carregamento e display-swap para evitar bloqueios de renderização -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    
+    <!-- Configuração do Tailwind -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#c7bfff",
+                        "on-primary-container": "#25008c",
+                        "tertiary-fixed": "#ffe08f",
+                        "deep-space": "#060608",
+                        "surface-variant": "#353437",
+                        "surface-container": "#201f22",
+                        "tertiary": "#e6c364",
+                        "secondary": "#44e2cd",
+                        "primary-container": "#8e7fff",
+                        "on-primary": "#2b009e",
+                        "frost-white": "#F0F0F5",
+                        "on-surface": "#e5e1e5",
+                        "secondary-fixed-dim": "#3cddc7",
+                        "on-primary-fixed-variant": "#4229b9",
+                        "on-secondary-fixed": "#00201c",
+                        "void-navy": "#0B0B1A",
+                        "on-tertiary-container": "#503d00",
+                        "on-secondary": "#003731",
+                        "neon-cyan": "#2DD4BF",
+                        "surface-dim": "#131316",
+                        "surface-container-highest": "#353437",
+                        "on-secondary-fixed-variant": "#005047",
+                        "tertiary-container": "#c9a84c",
+                        "surface-container-high": "#2a2a2c",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#e6c364",
+                        "on-secondary-container": "#004d44",
+                        "surface-container-lowest": "#0e0e10",
+                        "outline": "#928ea0",
+                        "on-primary-fixed": "#180065",
+                        "surface": "#131316",
+                        "primary": "#c7bfff",
+                        "on-surface-variant": "#c9c4d6",
+                        "electric-violet": "#7C6AF5",
+                        "background": "#131316",
+                        "surface-container-low": "#1c1b1e",
+                        "on-tertiary-fixed": "#241a00",
+                        "surface-tint": "#c7bfff",
+                        "on-tertiary": "#3d2e00",
+                        "plasma-gold": "#C9A84C",
+                        "surface-bright": "#39393c",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#e5deff",
+                        "inverse-surface": "#e5e1e5",
+                        "on-error": "#690005",
+                        "inverse-on-surface": "#313033",
+                        "on-tertiary-fixed-variant": "#584400",
+                        "secondary-fixed": "#62fae3",
+                        "on-background": "#e5e1e5",
+                        "inverse-primary": "#5b46d2",
+                        "glass-stroke": "rgba(240, 240, 245, 0.12)",
+                        "secondary-container": "#03c6b2",
+                        "error-container": "#93000a",
+                        "outline-variant": "#474554"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Sora"],
+                        "code-label": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Sora"],
+                        "display-lg-mobile": ["Sora"],
+                        "headline-sm": ["Sora"],
+                        "body-md": ["Inter"],
+                        "cta-label": ["Sora"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "code-label": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "cta-label": ["16px", { "lineHeight": "100%", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    
+    <!-- Folha de Estilos Externa -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+</head>
+<body class="font-body-md selection:bg-neon-cyan selection:text-void-navy">
+    <div class="mouse-glow" id="glow" style="left: 1px; top: 624px;"></div>
+    
+    <!-- Barra de Navegação Fixa de Largura Total -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-deep-space/70 backdrop-blur-xl border-b border-glass-stroke shadow-lg transition-all duration-300">
+        <div class="flex justify-between items-center px-6 py-4 max-w-container-max mx-auto">
+            <a href="index.html" class="flex items-center">
+                <img src="assets/image/logo_mulinotech_branco.png" alt="MulinoTech" class="h-[60px] md:h-[80px] w-auto object-contain hover:scale-105 transition-transform duration-300 rounded-lg" fetchpriority="high" width="200" height="80" />
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 hover:translate-y-[-2px] font-headline-sm text-[16px]" href="index.html">Home</a>
+                <a class="text-neon-cyan border-b-2 border-neon-cyan pb-1 font-headline-sm text-[16px]" href="quem-somos.html">Quem Somos</a>
+                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 hover:translate-y-[-2px] font-headline-sm text-[16px]" href="servicos.html">Serviços</a>
+                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 hover:translate-y-[-2px] font-headline-sm text-[16px]" href="produtos.html">Produtos</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="login.html" id="nav-login-icon" class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform" title="Área do Cliente / Login">account_circle</a>
+                <a href="index.html#contato" class="hidden sm:flex bg-electric-violet text-on-primary font-cta-label py-2 px-6 rounded-lg btn-3d glow-violet shadow-[0_4px_0_#4229b9] items-center justify-center text-sm">Fale com um Especialista</a>
+                
+                <!-- Botão Menu Mobile (Hamburguer) -->
+                <button id="mobile-menu-btn" class="flex md:hidden p-2 text-on-surface hover:text-neon-cyan focus:outline-none transition-colors" aria-label="Abrir Menu">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Gaveta de Navegação Mobile (Mobile Menu Drawer) -->
+        <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-[#1c1b1e] border-l border-glass-stroke shadow-2xl p-6 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+            <div class="flex justify-between items-center mb-10">
+                <img src="assets/image/logo_mulinotech_branco.png" alt="MulinoTech" class="h-[80px] w-auto object-contain" width="200" height="80" />
+                <button id="mobile-menu-close" class="p-2 text-on-surface hover:text-neon-cyan focus:outline-none transition-colors" aria-label="Fechar Menu">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+            </div>
+            <div class="flex flex-col gap-6 font-headline-sm text-lg">
+                <a class="text-on-surface-variant hover:text-primary transition-colors pl-3 py-2" href="index.html">Home</a>
+                <a class="text-neon-cyan border-l-2 border-neon-cyan pl-3 py-2" href="quem-somos.html">Quem Somos</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors pl-3 py-2" href="servicos.html">Serviços</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors pl-3 py-2" href="produtos.html">Produtos</a>
+            </div>
+            <div class="mt-12 pt-8 border-t border-glass-stroke space-y-6">
+                <a href="index.html#contato" class="w-full bg-electric-violet text-on-primary font-cta-label py-3 px-6 rounded-lg btn-3d glow-violet shadow-[0_4px_0_#4229b9] flex items-center justify-center text-sm">Fale com um Especialista</a>
+                <div class="flex justify-center gap-6 mt-6">
+                    <a href="#" class="material-symbols-outlined text-primary hover:text-neon-cyan transition-colors text-2xl p-2" aria-label="Terminal Protocol">terminal</a>
+                    <a href="#" class="material-symbols-outlined text-primary hover:text-neon-cyan transition-colors text-2xl p-2" aria-label="Database Hub">database</a>
+                    <a href="#" class="material-symbols-outlined text-primary hover:text-neon-cyan transition-colors text-2xl p-2" aria-label="Cloud Platform">cloud</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-12 pb-20">
+        <!-- Seção Hero: 15 Anos de Engenharia e Estratégia -->
+        <section class="max-w-container-max mx-auto px-4 md:px-margin-desktop mb-32 relative">
+            <div class="absolute -top-20 -left-20 w-96 h-96 bg-electric-violet/10 blur-[120px] rounded-full"></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <div class="inline-flex items-center px-3 py-1 glass-panel rounded-full mb-6">
+                        <span class="font-code-label text-neon-cyan text-xs uppercase tracking-widest">Neural Interface Protocol v1.0.4</span>
+                    </div>
+                    <h1 class="font-display-lg text-display-lg text-on-background mb-8 leading-tight">15 Anos de <span class="text-primary">Engenharia</span> e Estratégia.</h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">A síntese de experiência consolidada no desenvolvimento de software de vanguarda e na estruturação de modelos de negócio de alta performance.</p>
+                </div>
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-electric-violet to-neon-cyan rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                    <div class="relative glass-panel rounded-2xl overflow-hidden aspect-video shadow-2xl">
+                        <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Sala de servidores futurista" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp6GyFM-QUGWrpvpXvlBs7FazrL38Ga_eGYmKKpCPB7L2G9teEkFPNu08bCmk4tpRTht9UwTHraztERhhSWD-shIse-zMJuN_rDLKa50PleR6-8TxbArfLa-P7M-1IGFkOayYQUALXfJffdylUmk3aiZxyFovipgtoOqBAwoZZi9dDNW9KH6wX2y26XQIZJHDq1wGe9jtTW1qQnz_B7hDF_v0a5Q3T39C5n6TKeJ2AFD0uZZS9hSg7eq4roiRWB65JKMiP617jpFQ" loading="lazy" width="600" height="337" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The 'Intelligence' Section -->
+        <section class="py-24 bg-void-navy relative overflow-hidden mb-32">
+            <div class="neural-line absolute top-0"></div>
+            <div class="max-w-container-max mx-auto px-4 md:px-margin-desktop text-center">
+                <h2 class="font-headline-md text-headline-md text-on-background mb-12">"No cenário comercial moderno, possuir um software não é diferencial, a <span class="text-secondary">vantagem competitiva</span> reside na inteligência que esse software processa."</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="glass-panel p-8 rounded-2xl transition-all duration-300 group">
+                        <span class="material-symbols-outlined text-4xl text-neon-cyan mb-6 group-hover:scale-110 transition-transform">memory</span>
+                        <h3 class="font-headline-sm text-headline-sm text-on-background mb-4">Núcleo Neural</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant">Arquiteturas de dados desenhadas para aprender e otimizar processos em tempo real.</p>
+                    </div>
+                    <div class="glass-panel p-8 rounded-2xl transition-all duration-300 group">
+                        <span class="material-symbols-outlined text-4xl text-electric-violet mb-6 group-hover:scale-110 transition-transform">insights</span>
+                        <h3 class="font-headline-sm text-headline-sm text-on-background mb-4">Camada Analítica</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant">Transformando raw data em decisões estratégicas com precisão matemática.</p>
+                    </div>
+                    <div class="glass-panel p-8 rounded-2xl transition-all duration-300 group">
+                        <span class="material-symbols-outlined text-4xl text-plasma-gold mb-6 group-hover:scale-110 transition-transform">auto_awesome</span>
+                        <h3 class="font-headline-sm text-headline-sm text-on-background mb-4">Interface Pura</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant">Experiências intuitivas que conectam o humano ao poder da computação avançada.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="neural-line absolute bottom-0"></div>
+        </section>
+
+        <!-- Foundation Principles: Bento Grid -->
+        <section class="max-w-container-max mx-auto px-4 md:px-margin-desktop mb-32">
+            <h2 class="font-headline-md text-headline-md text-on-background mb-16 border-l-4 border-primary pl-6">Nossos Pilares de Sustentação</h2>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                <!-- Precision -->
+                <div class="md:col-span-8 glass-panel p-10 rounded-2xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-neon-cyan/5 rounded-full blur-[60px] -mr-32 -mt-32"></div>
+                    <span class="font-code-label text-neon-cyan mb-4 block">01 / PILAR</span>
+                    <h3 class="font-headline-md text-headline-md text-on-background mb-4">Precisão</h3>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                        Nossa engenharia não aceita margens de erro. Cada linha de código é um compromisso com a exatidão e a performance de missão crítica.
+                    </p>
+                </div>
+                <!-- ROI -->
+                <div class="md:col-span-4 glass-panel p-10 rounded-2xl bg-gradient-to-br from-void-navy to-deep-space flex flex-col justify-end">
+                    <span class="font-code-label text-plasma-gold mb-4 block">02 / PILAR</span>
+                    <h3 class="font-headline-sm text-headline-sm text-on-background mb-2">ROI Exponencial</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Foco absoluto no retorno sobre investimento através de tecnologia escalável.</p>
+                </div>
+                <!-- Integrity -->
+                <div class="md:col-span-4 glass-panel p-10 rounded-2xl border-electric-violet/20">
+                    <span class="font-code-label text-electric-violet mb-4 block">03 / PILAR</span>
+                    <h3 class="font-headline-sm text-headline-sm text-on-background mb-2">Integridade</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Transparência radical em todas as etapas do desenvolvimento e entrega.</p>
+                </div>
+                <!-- Partnership -->
+                <div class="md:col-span-4 glass-panel p-10 rounded-2xl">
+                    <span class="font-code-label text-on-surface-variant mb-4 block">04 / PILAR</span>
+                    <h3 class="font-headline-sm text-headline-sm text-on-background mb-2">Parceria</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Não somos fornecedores; somos o braço tecnológico estratégico do seu negócio.</p>
+                </div>
+                <!-- Evolution & Scale -->
+                <div class="md:col-span-4 glass-panel p-10 rounded-2xl bg-primary/5">
+                    <span class="font-code-label text-primary mb-4 block">05 / PILAR</span>
+                    <h3 class="font-headline-sm text-headline-sm text-on-background mb-2">Evolução e Escala</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Sistemas desenhados para o amanhã, prontos para crescer sem fricção ou limites.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="max-w-container-max mx-auto px-4 md:px-margin-desktop">
+            <div class="glass-panel p-12 md:p-20 rounded-[32px] text-center relative overflow-hidden glow-shadow-cyan">
+                <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-neon-cyan/20 blur-[100px] rounded-full"></div>
+                <div class="absolute -top-20 -left-20 w-80 h-80 bg-electric-violet/20 blur-[100px] rounded-full"></div>
+                <h2 class="font-display-lg text-headline-md md:text-display-lg text-on-background mb-8 leading-tight">
+                    Pronto para a Próxima <br /><span class="text-neon-cyan">Interface da Realidade?</span>
+                </h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
+                    Conecte sua empresa à inteligência que processa o futuro. Nossos especialistas estão prontos para desenhar sua arquitetura de sucesso.
+                </p>
+                <div class="flex flex-col md:flex-row gap-6 justify-center">
+                    <a href="index.html#contato" class="bg-neon-cyan text-void-navy px-10 py-5 rounded-xl font-headline-sm hover:scale-105 transition-all duration-300 shadow-[0_10px_30px_rgba(45,212,191,0.3)] flex items-center justify-center">
+                        Falar com Especialista
+                    </a>
+                    <a href="produtos.html" class="glass-panel text-on-surface px-10 py-5 rounded-xl font-headline-sm hover:bg-white/5 transition-all duration-300 flex items-center justify-center">
+                        Conhecer Produtos
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé Estático -->
+    <footer class="bg-void-navy w-full mt-auto relative overflow-hidden border-t border-glass-stroke shadow-[0_-20px_50px_rgba(6,6,8,0.8)]">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-12 max-w-container-max mx-auto relative z-10">
+            <div class="col-span-1 md:col-span-1">
+                <div class="font-headline-sm text-headline-sm text-primary-fixed-dim mb-6">MulinoTech</div>
+                <p class="font-body-md text-on-surface-variant mb-6">15 anos de engenharia e estratégia estruturando vantagens competitivas sustentáveis.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="material-symbols-outlined text-primary hover:text-neon-cyan transition-colors p-1" aria-label="Terminal Protocol">terminal</a>
+                    <a href="#" class="material-symbols-outlined text-primary hover:text-neon-cyan transition-colors p-1" aria-label="Database Hub">database</a>
+                    <a href="#" class="material-symbols-outlined text-primary hover:text-neon-cyan transition-colors p-1" aria-label="Cloud Platform">cloud</a>
+                </div>
+            </div>
+            <div>
+                <h5 class="text-on-surface font-headline-sm text-[16px] mb-6">Empresa</h5>
+                <ul class="space-y-4 font-body-md text-on-surface-variant">
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="quem-somos.html">Quem Somos</a></li>
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="servicos.html">Serviços</a></li>
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="produtos.html">Produtos</a></li>
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="index.html#contato">Contato</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-on-surface font-headline-sm text-[16px] mb-6">Produtos</h5>
+                <ul class="space-y-4 font-body-md text-on-surface-variant">
+                    <li class=""><a class="hover:text-neon-cyan transition-colors duration-200" href="produtos.html">Mulino AI</a></li>
+                    <li class=""><a class="hover:text-neon-cyan transition-colors duration-200" href="produtos.html">Mulino Lover</a></li>
+                    <li class=""><a class="hover:text-neon-cyan transition-colors duration-200" href="#">API Documentation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-on-surface font-headline-sm text-[16px] mb-6">Legal</h5>
+                <ul class="space-y-4 font-body-md text-on-surface-variant">
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="#">Privacidade</a></li>
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="#">Segurança</a></li>
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="#">Termos de Uso</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-glass-stroke/30 py-8 px-margin-desktop text-center">
+            <p class="font-body-md text-on-surface-variant text-sm">© 2024 MulinoTech. Neural Interface Protocol v1.0.4</p>
+        </div>
+    </footer>
+    
+    <!-- Script Global -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

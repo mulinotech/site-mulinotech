@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Área do Cliente | Login | MulinoTech</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/image/favicon.ico" type="image/x-icon" />
+    
+    <!-- Tailwind CSS com Plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    
+    <!-- Configuração do Tailwind -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#c7bfff",
+                        "on-primary-container": "#25008c",
+                        "tertiary-fixed": "#ffe08f",
+                        "deep-space": "#060608",
+                        "surface-variant": "#353437",
+                        "surface-container": "#201f22",
+                        "tertiary": "#e6c364",
+                        "secondary": "#44e2cd",
+                        "primary-container": "#8e7fff",
+                        "on-primary": "#2b009e",
+                        "frost-white": "#F0F0F5",
+                        "on-surface": "#e5e1e5",
+                        "secondary-fixed-dim": "#3cddc7",
+                        "on-primary-fixed-variant": "#4229b9",
+                        "on-secondary-fixed": "#00201c",
+                        "void-navy": "#0B0B1A",
+                        "on-tertiary-container": "#503d00",
+                        "on-secondary": "#003731",
+                        "neon-cyan": "#2DD4BF",
+                        "surface-dim": "#131316",
+                        "surface-container-highest": "#353437",
+                        "on-secondary-fixed-variant": "#005047",
+                        "tertiary-container": "#c9a84c",
+                        "surface-container-high": "#2a2a2c",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#e6c364",
+                        "on-secondary-container": "#004d44",
+                        "surface-container-lowest": "#0e0e10",
+                        "outline": "#928ea0",
+                        "on-primary-fixed": "#180065",
+                        "surface": "#131316",
+                        "primary": "#c7bfff",
+                        "on-surface-variant": "#c9c4d6",
+                        "electric-violet": "#7C6AF5",
+                        "background": "#131316",
+                        "surface-container-low": "#1c1b1e",
+                        "on-tertiary-fixed": "#241a00",
+                        "surface-tint": "#c7bfff",
+                        "on-tertiary": "#3d2e00",
+                        "plasma-gold": "#C9A84C",
+                        "surface-bright": "#39393c",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#e5deff",
+                        "inverse-surface": "#e5e1e5",
+                        "on-error": "#690005",
+                        "inverse-on-surface": "#313033",
+                        "on-tertiary-fixed-variant": "#584400",
+                        "secondary-fixed": "#62fae3",
+                        "on-background": "#e5e1e5",
+                        "inverse-primary": "#5b46d2",
+                        "glass-stroke": "rgba(240, 240, 245, 0.12)",
+                        "secondary-container": "#03c6b2",
+                        "error-container": "#93000a",
+                        "outline-variant": "#474554"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Sora"],
+                        "code-label": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Sora"],
+                        "display-lg-mobile": ["Sora"],
+                        "headline-sm": ["Sora"],
+                        "body-md": ["Inter"],
+                        "cta-label": ["Sora"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "code-label": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "cta-label": ["16px", { "lineHeight": "100%", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    
+    <!-- Folha de Estilos Externa -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+</head>
+<body class="font-body-md selection:bg-neon-cyan selection:text-void-navy min-h-screen flex flex-col">
+    <!-- Efeito de brilho do mouse -->
+    <div class="mouse-glow" id="glow"></div>
+    
+    <!-- Barra de Navegação -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-deep-space/70 backdrop-blur-xl border-b border-glass-stroke shadow-lg transition-all duration-300">
+        <div class="flex justify-between items-center px-6 py-4 max-w-container-max mx-auto">
+            <a href="index.html" class="flex items-center">
+                <img src="assets/image/logo_mulinotech_branco.png" alt="MulinoTech" class="h-[60px] md:h-[80px] w-auto object-contain hover:scale-105 transition-transform duration-300 rounded-lg" fetchpriority="high" width="200" height="80" />
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 hover:translate-y-[-2px] font-headline-sm text-[16px]" href="index.html">Home</a>
+                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 hover:translate-y-[-2px] font-headline-sm text-[16px]" href="quem-somos.html">Quem Somos</a>
+                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 hover:translate-y-[-2px] font-headline-sm text-[16px]" href="servicos.html">Serviços</a>
+                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 hover:translate-y-[-2px] font-headline-sm text-[16px]" href="produtos.html">Produtos</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="login.html" class="material-symbols-outlined text-neon-cyan text-glow-cyan cursor-pointer hover:scale-110 transition-transform" title="Área do Cliente / Login">account_circle</a>
+                <a href="index.html#contato" class="hidden sm:flex bg-electric-violet text-on-primary font-cta-label py-2 px-6 rounded-lg btn-3d glow-violet shadow-[0_4px_0_#4229b9] items-center justify-center text-sm">Fale com um Especialista</a>
+                
+                <!-- Botão Menu Mobile -->
+                <button id="mobile-menu-btn" class="flex md:hidden p-2 text-on-surface hover:text-neon-cyan focus:outline-none transition-colors" aria-label="Abrir Menu">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Gaveta Mobile -->
+        <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-[#1c1b1e] border-l border-glass-stroke shadow-2xl p-6 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+            <div class="flex justify-between items-center mb-10">
+                <img src="assets/image/logo_mulinotech_branco.png" alt="MulinoTech" class="h-[80px] w-auto object-contain" width="200" height="80" />
+                <button id="mobile-menu-close" class="p-2 text-on-surface hover:text-neon-cyan focus:outline-none transition-colors" aria-label="Fechar Menu">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+            </div>
+            <div class="flex flex-col gap-6 font-headline-sm text-lg">
+                <a class="text-on-surface-variant hover:text-primary transition-colors pl-3 py-2" href="index.html">Home</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors pl-3 py-2" href="quem-somos.html">Quem Somos</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors pl-3 py-2" href="servicos.html">Serviços</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors pl-3 py-2" href="produtos.html">Produtos</a>
+                <a class="text-neon-cyan border-l-2 border-neon-cyan pl-3 py-2" href="login.html">Área do Cliente</a>
+            </div>
+            <div class="mt-12 pt-8 border-t border-glass-stroke space-y-6">
+                <a href="index.html#contato" class="w-full bg-electric-violet text-on-primary font-cta-label py-3 px-6 rounded-lg btn-3d glow-violet shadow-[0_4px_0_#4229b9] flex items-center justify-center text-sm">Fale com um Especialista</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main class="relative z-10 flex-grow pt-32 pb-20 flex items-center justify-center px-4">
+        <div class="w-full max-w-[500px]">
+            <!-- Card de Login Glassmorphism -->
+            <div class="glass-panel p-8 md:p-12 rounded-[32px] border border-glass-stroke shadow-2xl relative overflow-hidden group">
+                <div class="absolute -top-32 -left-32 w-64 h-64 bg-electric-violet/10 rounded-full blur-[80px]"></div>
+                <div class="absolute -bottom-32 -right-32 w-64 h-64 bg-neon-cyan/10 rounded-full blur-[80px]"></div>
+
+                <div class="text-center mb-8 relative z-10">
+                    <div class="inline-flex w-16 h-16 rounded-2xl bg-electric-violet/20 items-center justify-center text-electric-violet mb-4">
+                        <span class="material-symbols-outlined text-3xl">key</span>
+                    </div>
+                    <h1 class="font-headline-md text-headline-md text-2xl text-on-surface mb-2">Área do Cliente</h1>
+                    <p class="text-on-surface-variant text-sm font-body-md">Acesse seus sistemas integrados e ecossistemas digitais.</p>
+                </div>
+
+                <!-- Mensagem de Alerta -->
+                <div id="login-alert" class="hidden mb-6 p-4 rounded-xl border text-sm font-medium transition-all duration-300"></div>
+
+                <!-- Formulário -->
+                <form id="login-form" class="space-y-6 relative z-10">
+                    <div class="space-y-2">
+                        <label for="login-email" class="font-code-label text-xs uppercase text-on-surface-variant tracking-wider">E-mail Corporativo</label>
+                        <div class="relative">
+                            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">mail</span>
+                            <input
+                                id="login-email"
+                                type="email"
+                                required
+                                class="w-full bg-[#060608]/80 border border-glass-stroke rounded-xl pl-12 pr-4 py-3.5 focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-all text-on-surface text-sm"
+                                placeholder="nome@empresa.com" />
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <label for="login-password" class="font-code-label text-xs uppercase text-on-surface-variant tracking-wider">Senha de Acesso</label>
+                            <a href="#" class="text-xs text-primary hover:text-neon-cyan hover:underline transition-colors font-code-label">Esqueceu a senha?</a>
+                        </div>
+                        <div class="relative">
+                            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">lock</span>
+                            <input
+                                id="login-password"
+                                type="password"
+                                required
+                                class="w-full bg-[#060608]/80 border border-glass-stroke rounded-xl pl-12 pr-4 py-3.5 focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan outline-none transition-all text-on-surface text-sm"
+                                placeholder="••••••••" />
+                        </div>
+                    </div>
+
+                    <button
+                        type="submit"
+                        id="login-btn"
+                        class="w-full bg-electric-violet text-on-primary py-4 rounded-xl font-cta-label text-cta-label btn-3d shadow-[0_4px_0_#4229b9] flex justify-center items-center gap-2 transition-all">
+                        <span id="login-btn-text">Autenticar na Plataforma</span>
+                        <span id="login-btn-icon" class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+
+                    <!-- Divisor -->
+                    <div class="flex items-center my-6">
+                        <div class="flex-grow border-t border-glass-stroke/30"></div>
+                        <span class="px-4 text-xs font-code-label text-on-surface-variant/50 uppercase tracking-widest">Demonstração</span>
+                        <div class="flex-grow border-t border-glass-stroke/30"></div>
+                    </div>
+
+                    <!-- Botão de Acesso Rápido -->
+                    <button
+                        type="button"
+                        id="demo-btn"
+                        class="w-full glass-panel hover:bg-white/5 text-on-surface py-3 rounded-xl font-code-label text-xs flex justify-center items-center gap-2 border border-glass-stroke/40 transition-colors">
+                        <span class="material-symbols-outlined text-secondary text-base">bolt</span>
+                        Acesso Rápido (Demonstração)
+                    </button>
+                </form>
+
+                <div class="mt-8 text-center text-xs text-on-surface-variant/40 font-code-label relative z-10">
+                    Protocolo Seguro SSL de 256 bits ativo.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-void-navy w-full mt-auto relative overflow-hidden border-t border-glass-stroke shadow-[0_-20px_50px_rgba(6,6,8,0.8)] z-10">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-12 max-w-container-max mx-auto relative z-10">
+            <div class="col-span-1 md:col-span-1">
+                <div class="font-headline-sm text-headline-sm text-primary-fixed-dim mb-6">MulinoTech</div>
+                <p class="font-body-md text-on-surface-variant mb-6">15 anos de engenharia e estratégia estruturando vantagens competitivas sustentáveis.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="material-symbols-outlined text-primary hover:text-neon-cyan transition-colors p-1" aria-label="Terminal Protocol">terminal</a>
+                    <a href="#" class="material-symbols-outlined text-primary hover:text-neon-cyan transition-colors p-1" aria-label="Database Hub">database</a>
+                    <a href="#" class="material-symbols-outlined text-primary hover:text-neon-cyan transition-colors p-1" aria-label="Cloud Platform">cloud</a>
+                </div>
+            </div>
+            <div>
+                <h5 class="text-on-surface font-headline-sm text-[16px] mb-6">Empresa</h5>
+                <ul class="space-y-4 font-body-md text-on-surface-variant">
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="quem-somos.html">Quem Somos</a></li>
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="servicos.html">Serviços</a></li>
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="produtos.html">Produtos</a></li>
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="index.html#contato">Contato</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-on-surface font-headline-sm text-[16px] mb-6">Produtos</h5>
+                <ul class="space-y-4 font-body-md text-on-surface-variant">
+                    <li class=""><a class="hover:text-neon-cyan transition-colors duration-200" href="produtos.html">Mulino AI</a></li>
+                    <li class=""><a class="hover:text-neon-cyan transition-colors duration-200" href="produtos.html">Mulino Lover</a></li>
+                    <li class=""><a class="hover:text-neon-cyan transition-colors duration-200" href="#">API Documentation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-on-surface font-headline-sm text-[16px] mb-6">Legal</h5>
+                <ul class="space-y-4 font-body-md text-on-surface-variant">
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="#">Privacidade</a></li>
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="#">Segurança</a></li>
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="#">Termos de Uso</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-glass-stroke/30 py-8 px-margin-desktop text-center">
+            <p class="font-body-md text-on-surface-variant text-sm">© 2024 MulinoTech. Neural Interface Protocol v1.0.4</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Verificar se usuário já está logado
+            if (sessionStorage.getItem('logged_in') === 'true') {
+                window.location.href = 'dashboard.html';
+                return;
+            }
+
+            const form = document.getElementById('login-form');
+            const emailInput = document.getElementById('login-email');
+            const passwordInput = document.getElementById('login-password');
+            const loginBtn = document.getElementById('login-btn');
+            const btnText = document.getElementById('login-btn-text');
+            const btnIcon = document.getElementById('login-btn-icon');
+            const alertBox = document.getElementById('login-alert');
+            const demoBtn = document.getElementById('demo-btn');
+
+            // Credenciais de Demonstração
+            const DEMO_EMAIL = 'cliente@mulinotech.com';
+            const DEMO_PASSWORD = 'senha123';
+
+            // Acesso Rápido / Preencher demonstração
+            demoBtn.addEventListener('click', () => {
+                emailInput.value = DEMO_EMAIL;
+                passwordInput.value = DEMO_PASSWORD;
+                
+                // Dar um breve atraso visual antes de submeter
+                demoBtn.style.opacity = '0.5';
+                setTimeout(() => {
+                    demoBtn.style.opacity = '1';
+                    form.dispatchEvent(new Event('submit'));
+                }, 400);
+            });
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const email = emailInput.value.trim();
+                const password = passwordInput.value;
+
+                // Bloquear UI
+                loginBtn.disabled = true;
+                loginBtn.style.opacity = '0.7';
+                demoBtn.disabled = true;
+                btnText.textContent = 'Autenticando canal neural...';
+                btnIcon.textContent = 'sync';
+                btnIcon.classList.add('animate-spin');
+                alertBox.className = 'hidden';
+
+                // Simulação de delay para autenticação de alta fidelidade
+                setTimeout(() => {
+                    if (email === DEMO_EMAIL && password === DEMO_PASSWORD) {
+                        btnText.textContent = 'Chaves validadas! Redirecionando...';
+                        btnIcon.textContent = 'done';
+                        btnIcon.classList.remove('animate-spin');
+                        
+                        alertBox.textContent = 'Conexão estabelecida com sucesso. Sincronizando portal do cliente...';
+                        alertBox.className = 'mb-6 p-4 rounded-xl border border-neon-cyan/30 bg-neon-cyan/10 text-neon-cyan text-sm font-medium block animate-pulse';
+
+                        // Salvar sessão
+                        sessionStorage.setItem('logged_in', 'true');
+                        sessionStorage.setItem('user_email', email);
+
+                        // Redirecionar após 1 segundo
+                        setTimeout(() => {
+                            window.location.href = 'dashboard.html';
+                        }, 1200);
+                    } else {
+                        // Credenciais Inválidas
+                        loginBtn.disabled = false;
+                        loginBtn.style.opacity = '1';
+                        demoBtn.disabled = false;
+                        btnText.textContent = 'Autenticar na Plataforma';
+                        btnIcon.textContent = 'arrow_forward';
+                        btnIcon.classList.remove('animate-spin');
+
+                        alertBox.textContent = 'Erro de Acesso: Credenciais inválidas ou protocolo rejeitado.';
+                        alertBox.className = 'mb-6 p-4 rounded-xl border border-red-500/30 bg-red-500/10 text-red-400 text-sm font-medium block border-glow-red';
+                        
+                        // Efeito de tremor no card
+                        const card = form.closest('.glass-panel');
+                        card.classList.add('animate-shake');
+                        setTimeout(() => card.classList.remove('animate-shake'), 500);
+                    }
+                }, 1800);
+            });
+        });
+    </script>
+    <style>
+        /* Animação extra de tremor em caso de erro */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-6px); }
+            40%, 80% { transform: translateX(6px); }
+        }
+        .animate-shake {
+            animation: shake 0.4s ease-in-out;
+        }
+        .border-glow-red {
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.2);
+        }
+    </style>
+</body>
+</html>

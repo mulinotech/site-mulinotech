@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Serviços | MulinoTech</title>
+    
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/image/favicon.ico" type="image/x-icon" />
+    
+    <!-- Tailwind CSS com Plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+<!-- Google Fonts com pré-carregamento e display-swap para evitar bloqueios de renderização -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    
+    <!-- Configuração do Tailwind -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#c7bfff",
+                        "on-primary-container": "#25008c",
+                        "tertiary-fixed": "#ffe08f",
+                        "deep-space": "#060608",
+                        "surface-variant": "#353437",
+                        "surface-container": "#201f22",
+                        "tertiary": "#e6c364",
+                        "secondary": "#44e2cd",
+                        "primary-container": "#8e7fff",
+                        "on-primary": "#2b009e",
+                        "frost-white": "#F0F0F5",
+                        "on-surface": "#e5e1e5",
+                        "secondary-fixed-dim": "#3cddc7",
+                        "on-primary-fixed-variant": "#4229b9",
+                        "on-secondary-fixed": "#00201c",
+                        "void-navy": "#0B0B1A",
+                        "on-tertiary-container": "#503d00",
+                        "on-secondary": "#003731",
+                        "neon-cyan": "#2DD4BF",
+                        "surface-dim": "#131316",
+                        "surface-container-highest": "#353437",
+                        "on-secondary-fixed-variant": "#005047",
+                        "tertiary-container": "#c9a84c",
+                        "surface-container-high": "#2a2a2c",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#e6c364",
+                        "on-secondary-container": "#004d44",
+                        "surface-container-lowest": "#0e0e10",
+                        "outline": "#928ea0",
+                        "on-primary-fixed": "#180065",
+                        "surface": "#131316",
+                        "primary": "#c7bfff",
+                        "on-surface-variant": "#c9c4d6",
+                        "electric-violet": "#7C6AF5",
+                        "background": "#131316",
+                        "surface-container-low": "#1c1b1e",
+                        "on-tertiary-fixed": "#241a00",
+                        "surface-tint": "#c7bfff",
+                        "on-tertiary": "#3d2e00",
+                        "plasma-gold": "#C9A84C",
+                        "surface-bright": "#39393c",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#e5deff",
+                        "inverse-surface": "#e5e1e5",
+                        "on-error": "#690005",
+                        "inverse-on-surface": "#313033",
+                        "on-tertiary-fixed-variant": "#584400",
+                        "secondary-fixed": "#62fae3",
+                        "on-background": "#e5e1e5",
+                        "inverse-primary": "#5b46d2",
+                        "glass-stroke": "rgba(240, 240, 245, 0.12)",
+                        "secondary-container": "#03c6b2",
+                        "error-container": "#93000a",
+                        "outline-variant": "#474554"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Sora"],
+                        "code-label": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Sora"],
+                        "display-lg-mobile": ["Sora"],
+                        "headline-sm": ["Sora"],
+                        "body-md": ["Inter"],
+                        "cta-label": ["Sora"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "code-label": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "cta-label": ["16px", { "lineHeight": "100%", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    
+    <!-- Folha de Estilos Externa -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+</head>
+<body class="font-body-md selection:bg-neon-cyan selection:text-void-navy">
+    <div class="mouse-glow" id="glow" style="left: 1px; top: 624px;"></div>
+    
+    <!-- Barra de Navegação Fixa de Largura Total -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-deep-space/70 backdrop-blur-xl border-b border-glass-stroke shadow-lg transition-all duration-300">
+        <div class="flex justify-between items-center px-6 py-4 max-w-container-max mx-auto">
+            <a href="index.html" class="flex items-center">
+                <img src="assets/image/logo_mulinotech_branco.png" alt="MulinoTech" class="h-[60px] md:h-[80px] w-auto object-contain hover:scale-105 transition-transform duration-300 rounded-lg" fetchpriority="high" width="200" height="80" />
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 hover:translate-y-[-2px] font-headline-sm text-[16px]" href="index.html">Home</a>
+                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 hover:translate-y-[-2px] font-headline-sm text-[16px]" href="quem-somos.html">Quem Somos</a>
+                <a class="text-neon-cyan border-b-2 border-neon-cyan pb-1 font-headline-sm text-[16px]" href="servicos.html">Serviços</a>
+                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 hover:translate-y-[-2px] font-headline-sm text-[16px]" href="produtos.html">Produtos</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="login.html" id="nav-login-icon" class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform" title="Área do Cliente / Login">account_circle</a>
+                <a href="index.html#contato" class="hidden sm:flex bg-electric-violet text-on-primary font-cta-label py-2 px-6 rounded-lg btn-3d glow-violet shadow-[0_4px_0_#4229b9] items-center justify-center text-sm">Fale com um Especialista</a>
+                
+                <!-- Botão Menu Mobile (Hamburguer) -->
+                <button id="mobile-menu-btn" class="flex md:hidden p-2 text-on-surface hover:text-neon-cyan focus:outline-none transition-colors" aria-label="Abrir Menu">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Gaveta de Navegação Mobile (Mobile Menu Drawer) -->
+        <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-[#1c1b1e] border-l border-glass-stroke shadow-2xl p-6 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+            <div class="flex justify-between items-center mb-10">
+                <img src="assets/image/logo_mulinotech_branco.png" alt="MulinoTech" class="h-[80px] w-auto object-contain" width="200" height="80" />
+                <button id="mobile-menu-close" class="p-2 text-on-surface hover:text-neon-cyan focus:outline-none transition-colors" aria-label="Fechar Menu">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+            </div>
+            <div class="flex flex-col gap-6 font-headline-sm text-lg">
+                <a class="text-on-surface-variant hover:text-primary transition-colors pl-3 py-2" href="index.html">Home</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors pl-3 py-2" href="quem-somos.html">Quem Somos</a>
+                <a class="text-neon-cyan border-l-2 border-neon-cyan pl-3 py-2" href="servicos.html">Serviços</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors pl-3 py-2" href="produtos.html">Produtos</a>
+            </div>
+            <div class="mt-12 pt-8 border-t border-glass-stroke space-y-6">
+                <a href="index.html#contato" class="w-full bg-electric-violet text-on-primary font-cta-label py-3 px-6 rounded-lg btn-3d glow-violet shadow-[0_4px_0_#4229b9] flex items-center justify-center text-sm">Fale com um Especialista</a>
+                <div class="flex justify-center gap-6 mt-6">
+                    <a href="#" class="material-symbols-outlined text-primary hover:text-neon-cyan transition-colors text-2xl p-2" aria-label="Terminal Protocol">terminal</a>
+                    <a href="#" class="material-symbols-outlined text-primary hover:text-neon-cyan transition-colors text-2xl p-2" aria-label="Database Hub">database</a>
+                    <a href="#" class="material-symbols-outlined text-primary hover:text-neon-cyan transition-colors text-2xl p-2" aria-label="Cloud Platform">cloud</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-24 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-electric-violet/10 rounded-full blur-[120px] animate-pulse"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-cyan/10 rounded-full blur-[120px] animate-pulse" style="animation-delay: 2s"></div>
+        </div>
+        <div class="max-w-container-max mx-auto px-4 md:px-6 relative z-10">
+            <div class="flex flex-col items-start gap-6 max-w-3xl">
+                <div class="inline-flex items-center px-3 py-1 rounded-full bg-neon-cyan/10 border border-neon-cyan/20 text-neon-cyan font-code-label text-xs uppercase tracking-widest">
+                    Engenharia de Elite
+                </div>
+                <h1 class="font-display-lg text-display-lg text-white leading-tight">Soluções que Resolvem <span class="text-neon-cyan text-glow-cyan">Problemas Reais</span></h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Infraestrutura crítica, integrações complexas e automação inteligente para operações que exigem máxima eficiência e integridade total de dados.</p>
+                <div class="flex gap-4 mt-4">
+                    <a href="index.html#contato" class="px-8 py-4 bg-primary text-on-primary font-bold rounded-xl hover:translate-y-[-4px] transition-all duration-300 shadow-lg flex items-center gap-2">
+                        <span>Iniciar Projeto</span>
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                    <a href="#stacks" class="px-8 py-4 glass-panel text-white font-bold rounded-xl hover:bg-white/5 transition-all duration-300 border border-glass-stroke">
+                        Ver Documentação
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services Bento Grid -->
+    <section class="py-24 max-w-container-max mx-auto px-4 md:px-6">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+            <!-- Architecture of Integrations -->
+            <div class="md:col-span-8 glass-panel p-6 md:p-8 rounded-[32px] group hover:border-primary/40 transition-all duration-500 overflow-hidden relative">
+                <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <span class="material-symbols-outlined text-[120px] text-neon-cyan" style="font-variation-settings: 'FILL' 1;">hub</span>
+                </div>
+                <div class="relative z-10 flex flex-col h-full">
+                    <div class="w-12 h-12 rounded-xl bg-neon-cyan/20 flex items-center justify-center mb-6 text-neon-cyan">
+                        <span class="material-symbols-outlined">settings_input_component</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-white mb-4">Arquitetura de Integrações</h3>
+                    <p class="text-on-surface-variant font-body-lg mb-8 max-w-lg">Conectamos ecossistemas corporativos complexos com APIs de alto desempenho. Integramos legados estruturais com tecnologias modernas garantindo fluxo de dados contínuo.</p>
+                    <div class="mt-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="flex items-center gap-2 font-code-label text-neon-cyan text-xs">
+                            <div class="w-1.5 h-1.5 rounded-full bg-neon-cyan"></div> SAP &amp; ERPs
+                        </div>
+                        <div class="flex items-center gap-2 font-code-label text-neon-cyan text-xs">
+                            <div class="w-1.5 h-1.5 rounded-full bg-neon-cyan"></div> Salesforce
+                        </div>
+                        <div class="flex items-center gap-2 font-code-label text-neon-cyan text-xs">
+                            <div class="w-1.5 h-1.5 rounded-full bg-neon-cyan"></div> REST &amp; gRPC
+                        </div>
+                        <div class="flex items-center gap-2 font-code-label text-neon-cyan text-xs">
+                            <div class="w-1.5 h-1.5 rounded-full bg-neon-cyan"></div> Cloud Mesh
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Smart Automations -->
+            <div class="md:col-span-4 glass-panel p-6 md:p-8 rounded-[32px] group hover:border-electric-violet/40 transition-all duration-500">
+                <div class="w-12 h-12 rounded-xl bg-electric-violet/20 flex items-center justify-center mb-6 text-electric-violet">
+                    <span class="material-symbols-outlined">psychology</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-white mb-4">Automações Inteligentes</h3>
+                <p class="text-on-surface-variant font-body-md mb-6">Implementamos agentes autônomos e RPA avançado para otimizar fluxos de trabalho, reduzindo erros operacionais e elevando a produtividade da equipe.</p>
+                <div class="bg-void-navy/50 p-4 rounded-xl border border-glass-stroke space-y-3">
+                    <div class="h-1 w-full bg-glass-stroke rounded-full overflow-hidden">
+                        <div class="h-full bg-electric-violet w-[85%]"></div>
+                    </div>
+                    <div class="flex justify-between text-[10px] font-code-label text-on-surface-variant">
+                        <span>EFICIÊNCIA OPERACIONAL</span>
+                        <span class="text-electric-violet">+85%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Digital Product Development -->
+            <div class="md:col-span-4 glass-panel p-6 md:p-8 rounded-[32px] group hover:border-plasma-gold/40 transition-all duration-500">
+                <div class="w-12 h-12 rounded-xl bg-plasma-gold/20 flex items-center justify-center mb-6 text-plasma-gold">
+                    <span class="material-symbols-outlined">rocket_launch</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-white mb-4">Desenvolvimento de Produtos</h3>
+                <p class="text-on-surface-variant font-body-md mb-6">Engenharia de software focada em escalabilidade. Do design de sistemas à entrega final, construímos aplicações robustas que sustentam o crescimento do seu negócio.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-2 py-1 bg-surface-container rounded text-[10px] font-code-label">React</span>
+                    <span class="px-2 py-1 bg-surface-container rounded text-[10px] font-code-label">Flutter</span>
+                    <span class="px-2 py-1 bg-surface-container rounded text-[10px] font-code-label">Node.js</span>
+                    <span class="px-2 py-1 bg-surface-container rounded text-[10px] font-code-label">PostgreSQL</span>
+                </div>
+            </div>
+
+            <!-- Cybersecurity -->
+            <div class="md:col-span-8 glass-panel p-6 md:p-8 rounded-[32px] group hover:border-red-400/40 transition-all duration-500 flex flex-col md:flex-row gap-8 overflow-hidden">
+                <div class="flex-1">
+                    <div class="w-12 h-12 rounded-xl bg-red-400/20 flex items-center justify-center mb-6 text-red-400">
+                        <span class="material-symbols-outlined">encrypted</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-white mb-4">Segurança Cibernética</h3>
+                    <p class="text-on-surface-variant font-body-lg">Proteção active para seus ativos digitais. Auditorias de segurança, criptografia avançada e conformidade técnica para mitigar riscos em ambientes críticos.</p>
+                </div>
+                <div class="flex-1 relative flex items-center justify-center">
+                    <div class="w-48 h-48 border-2 border-dashed border-glass-stroke rounded-full flex items-center justify-center animate-[spin_20s_linear_infinite]">
+                        <div class="w-32 h-32 border-2 border-red-400/30 rounded-full flex items-center justify-center">
+                            <span class="material-symbols-outlined text-red-400 text-4xl" style="font-variation-settings: 'FILL' 1;">security</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Stacks & Tech Specs -->
+    <section class="py-24 bg-void-navy relative" id="stacks">
+        <div class="max-w-container-max mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-display-lg text-headline-md text-white mb-4">Protocolos &amp; Tecnologias</h2>
+                <p class="text-on-surface-variant max-w-2xl mx-auto">Nossa stack é selecionada para garantir máxima estabilidade e performance sob alta demanda.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-8">
+                <div class="flex flex-col items-center gap-3 p-6 glass-panel rounded-2xl transition-all">
+                    <div class="text-neon-cyan font-bold font-code-label">Python</div>
+                    <div class="text-[10px] text-on-surface-variant text-center">IA &amp; Backend</div>
+                </div>
+                <div class="flex flex-col items-center gap-3 p-6 glass-panel rounded-2xl transition-all">
+                    <div class="text-primary font-bold font-code-label">OpenAI</div>
+                    <div class="text-[10px] text-on-surface-variant text-center">Neural Networks</div>
+                </div>
+                <div class="flex flex-col items-center gap-3 p-6 glass-panel rounded-2xl transition-all">
+                    <div class="text-neon-cyan font-bold font-code-label">GraphQL</div>
+                    <div class="text-[10px] text-on-surface-variant text-center">Query Layer</div>
+                </div>
+                <div class="flex flex-col items-center gap-3 p-6 glass-panel rounded-2xl transition-all">
+                    <div class="text-electric-violet font-bold font-code-label">Docker</div>
+                    <div class="text-[10px] text-on-surface-variant text-center">Containerization</div>
+                </div>
+                <div class="flex flex-col items-center gap-3 p-6 glass-panel rounded-2xl transition-all">
+                    <div class="text-plasma-gold font-bold font-code-label">Redis</div>
+                    <div class="text-[10px] text-on-surface-variant text-center">Data Cache</div>
+                </div>
+                <div class="flex flex-col items-center gap-3 p-6 glass-panel rounded-2xl transition-all">
+                    <div class="text-white font-bold font-code-label">Next.js</div>
+                    <div class="text-[10px] text-on-surface-variant text-center">Frontend Layer</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Documentation Feature -->
+    <section class="py-24 max-w-container-max mx-auto px-4 md:px-6">
+        <div class="glass-panel rounded-[32px] md:rounded-[40px] overflow-hidden flex flex-col md:flex-row">
+            <div class="flex-1 p-12 lg:p-16 flex flex-col justify-center">
+                <span class="text-neon-cyan font-code-label text-sm mb-4">DOCUMENT_4.CORE</span>
+                <h2 class="font-display-lg text-headline-md text-white mb-6">Infraestrutura como Código e Cultura DevOps</h2>
+                <p class="text-on-surface-variant font-body-lg mb-8 leading-relaxed">
+                    Não apenas escrevemos código; desenhamos sistemas autossuficientes. Implementamos pipelines de CI/CD que garantem entregas contínuas com zero downtime, permitindo que seu negócio evolua na velocidade do mercado sem comprometer a estabilidade operacional.
+                </p>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center gap-3 text-white">
+                        <span class="material-symbols-outlined text-neon-cyan">check_circle</span>
+                        <span>Arquiteturas distribuídas em Microserviços</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-white">
+                        <span class="material-symbols-outlined text-neon-cyan">check_circle</span>
+                        <span>Monitoramento em tempo real (Observabilidade)</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-white">
+                        <span class="material-symbols-outlined text-neon-cyan">check_circle</span>
+                        <span>Auto-healing e escalonamento elástico</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex-1 bg-void-navy relative min-h-[400px]">
+                <img class="absolute inset-0 w-full h-full object-cover opacity-60" alt="Visualização abstrata de infraestrutura e DevOps" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADe6jdCbrXL95z7CpfSePqwOilBVF5t4ol6qdZkvcroHI0vSh7_fzKsLF_h3ppjZMyTVSAebkXv7YTRl3bNf5-MhGgXYBfY66s47sao_JZCz6N701J2x-qE79BWi8Mm77j1XIKmDzC8PS2-sxd8qge_sRbVy51gnHm9PXUw6Josz41FhN-nbijhqLlxYK-imi_j9nXinlbPDwc0jhWpoSZtT-q4vvPr1K33jN7iCTIz06hbiF1BF-LBiaRg17e48wwzrA9vZux6Pw" loading="lazy" width="600" height="400" />
+                <div class="absolute inset-0 bg-gradient-to-r from-void-navy via-transparent to-transparent"></div>
+                <!-- Floating Code Card -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 glass-panel p-4 rounded-xl border border-neon-cyan/30 animate-float">
+                    <div class="flex gap-1.5 mb-3">
+                        <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                        <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+                        <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                    </div>
+                    <code class="text-[10px] font-code-label text-neon-cyan block mb-2">deploy.yaml</code>
+                    <code class="text-[10px] font-code-label text-on-surface-variant block">
+                        service: mulino-api<br/>
+                        replicas: 5<br/>
+                        strategy: rollingUpdate<br/>
+                        health: /v1/status
+                    </code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 text-center px-4 md:px-6">
+        <div class="max-w-2xl mx-auto glass-panel p-12 rounded-[32px] border-electric-violet/30 glow-violet">
+            <h2 class="font-headline-md text-headline-md text-white mb-6">Pronto para escalar sua infraestrutura?</h2>
+            <p class="text-on-surface-variant mb-10">Agende uma sessão técnica com nossos arquitetos e descubra como a MulinoTech pode acelerar seu desenvolvimento.</p>
+            <a href="index.html#contato" class="inline-block px-10 py-5 bg-electric-violet text-on-primary font-bold rounded-2xl hover:shadow-[0_0_40px_rgba(124,106,245,0.6)] transition-all">
+                Falar com um Especialista
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé Estático -->
+    <footer class="bg-void-navy w-full mt-auto relative overflow-hidden border-t border-glass-stroke shadow-[0_-20px_50px_rgba(6,6,8,0.8)]">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-12 max-w-container-max mx-auto relative z-10">
+            <div class="col-span-1 md:col-span-1">
+                <div class="font-headline-sm text-headline-sm text-primary-fixed-dim mb-6">MulinoTech</div>
+                <p class="font-body-md text-on-surface-variant mb-6">15 anos de engenharia e estratégia estruturando vantagens competitivas sustentáveis.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="material-symbols-outlined text-primary hover:text-neon-cyan transition-colors p-1" aria-label="Terminal Protocol">terminal</a>
+                    <a href="#" class="material-symbols-outlined text-primary hover:text-neon-cyan transition-colors p-1" aria-label="Database Hub">database</a>
+                    <a href="#" class="material-symbols-outlined text-primary hover:text-neon-cyan transition-colors p-1" aria-label="Cloud Platform">cloud</a>
+                </div>
+            </div>
+            <div>
+                <h5 class="text-on-surface font-headline-sm text-[16px] mb-6">Empresa</h5>
+                <ul class="space-y-4 font-body-md text-on-surface-variant">
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="quem-somos.html">Quem Somos</a></li>
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="servicos.html">Serviços</a></li>
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="produtos.html">Produtos</a></li>
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="index.html#contato">Contato</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-on-surface font-headline-sm text-[16px] mb-6">Produtos</h5>
+                <ul class="space-y-4 font-body-md text-on-surface-variant">
+                    <li class=""><a class="hover:text-neon-cyan transition-colors duration-200" href="produtos.html">Mulino AI</a></li>
+                    <li class=""><a class="hover:text-neon-cyan transition-colors duration-200" href="produtos.html">Mulino Lover</a></li>
+                    <li class=""><a class="hover:text-neon-cyan transition-colors duration-200" href="#">API Documentation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-on-surface font-headline-sm text-[16px] mb-6">Legal</h5>
+                <ul class="space-y-4 font-body-md text-on-surface-variant">
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="#">Privacidade</a></li>
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="#">Segurança</a></li>
+                    <li class=""><a class="hover:text-plasma-gold transition-colors duration-200" href="#">Termos de Uso</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-glass-stroke/30 py-8 px-margin-desktop text-center">
+            <p class="font-body-md text-on-surface-variant text-sm">© 2024 MulinoTech. Neural Interface Protocol v1.0.4</p>
+        </div>
+    </footer>
+    
+    <!-- Script Global -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
