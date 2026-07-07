@@ -1,0 +1,10 @@
+# robots.txt - MulinoTech
+# https://mulinotech.com
+
+User-agent: *
+Allow: /
+
+# Area de acesso restrito
+Disallow: /login.html
+
+Sitemap: https://mulinotech.com/sitemap.xml

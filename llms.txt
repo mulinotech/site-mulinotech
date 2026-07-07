@@ -1,0 +1,18 @@
+# MulinoTech
+
+> Software house com 15 anos de engenharia e estrategia, especializada em solucoes de IA, DevOps e infraestrutura como codigo. Onde a robustez encontra a vanguarda.
+
+A MulinoTech desenvolve software sob medida e produtos de inteligencia artificial, unindo engenharia robusta a tecnologias de vanguarda para gerar vantagem competitiva por meio da inteligencia que o software processa.
+
+## Institucional
+
+- [Quem Somos](https://mulinotech.com/quem-somos.html): 15 anos de engenharia e estrategia, pilares de sustentacao e cultura da empresa
+- [Servicos](https://mulinotech.com/servicos.html): Solucoes sob medida, DevOps, infraestrutura como codigo e protocolos & tecnologias
+
+## Produtos
+
+- [Produtos](https://mulinotech.com/produtos.html): Tecnologia que escala sozinha — Mulino AI e Mulino Lover
+
+## Contato
+
+- [Fale conosco](https://mulinotech.com/index.html#contato): Canal de contato comercial
